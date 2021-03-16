@@ -14,10 +14,10 @@ class UsersController < ApplicationController
             render :new
         end
       end
-                 
+
     def show
-         @user = User.find(params[:id])
-         @events = Event.all
+      @user = User.find(params[:id])
+      @events = Event.all
     end
 
     private
