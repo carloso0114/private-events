@@ -5,7 +5,7 @@ module UsersHelper
       if use.id == event.user_id
        table += render inline: '<tr>'
        table += render inline: "<td><%= #{event.user_id} %></td>"
-       table += render inline: "<td> #{event.location} </td>"
+       table += render inline: "<td> #{event.description} </td>"
        table += render inline: '</tr>'
       end
     end
