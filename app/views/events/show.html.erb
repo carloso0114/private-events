@@ -2,6 +2,15 @@
 <p>
   <strong>Creator:</strong>
   <%= u_name %>
+  
+  <% if session[:current_user] && !current_user_now.attended_events.where(id: @event.id).any? %>
+    <%= form_for @attendance do |f| %>
+      <%= hidden_field_tag :event_id, @event.id %>
+      <%=hidden_field_tag :user_id, session[:current_user]['id'], {id: 'user_user_id', name: 'user[user_id]'}%>
+      <%= f.submit 'Attend' %>
+    <% end %>
+  <% end %>
+  
 </p>
 
 

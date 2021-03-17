@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[ show edit update destroy ]
+  before_action :logged_in_user, only: %i[ new ]
 
   # GET /events or /events.json
   def index
@@ -10,6 +11,7 @@ class EventsController < ApplicationController
   def show
     @user = User.all
     @event = Event.find(params[:id])
+    @attend = Attendance.all
   end
 
   # GET /events/new
@@ -24,7 +26,7 @@ class EventsController < ApplicationController
   # POST /events or /events.json
   def create
     # @event = Event.new(event_params)
-    @event = current_user.events.build(event_params)
+    @event = current_user.created_events.build(event_params)
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: "Event was successfully created." }
