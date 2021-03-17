@@ -11,7 +11,7 @@ class EventsController < ApplicationController
   def show
     @user = User.all
     @event = Event.find(params[:id])
-    @attend = Attendance.all
+    @attendance = Attendance.new
   end
 
   # GET /events/new
