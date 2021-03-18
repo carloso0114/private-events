@@ -5,10 +5,10 @@ class AttendancesController < ApplicationController
   end
 
   def create
-    @attendance = current_user.attendance.build(attendance_params)
+    @attendance = current_user.attended_events.build(attendance_params)
     respond_to do |format|
       if @attendance.save
-        format.html { redirect_to @event, notice: "Event was successfully created." }
+        format.html { redirect_to root_path, notice: "Event was successfully created." }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -20,6 +20,6 @@ class AttendancesController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:user_id, :event_id)
+      params.require(:attendance).permit(:attendees, :attended_events)
     end
 end
