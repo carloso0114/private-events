@@ -17,13 +17,16 @@
       </ul>
     </div>
   <% end %>
+    
     <%= form.number_field :attended_event, value: @event.id, class: 'form-control'%>
     <%= form.number_field :attendee, value: current_user.id, class: 'form-control' if current_user %>
+    
   <div class="actions">
     <%= form.submit 'Attend this Event',class: 'btn btn-success' if current_user %>
   </div>
+  <% end %>
 
-<% end %>
+
 <!-- ATTENDANCE FORM END -->
 
 
