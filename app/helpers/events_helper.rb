@@ -9,4 +9,16 @@ module EventsHelper
     name.html_safe
   end
 
+  def attenders
+    name = ''
+    @user.each do |use|
+      @attendances.each do |at|
+        if use.id == at.user_id.to_i
+          name += render inline: "<p> #{use.username} </p>"
+        end
+      end
+    end
+    name.html_safe
+  end
+
 end

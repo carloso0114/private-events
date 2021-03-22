@@ -1,19 +1,18 @@
 class AttendancesController < ApplicationController
 
     def create
-        a = Attendance.new(params)
-        a.save
-        if a.save
-            redirect_to root_path
+        @attendance = Attendance.create(event_id: params[:event_id], user_id: current_user.id)
+        if @attendance.save 
+            redirect_to event_path
         end
         
     end
     private
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:user_id, :event_id)
+      params.require(:attendances).permit(:user_id, :event_id)
     end
 end
 
 
-end
+

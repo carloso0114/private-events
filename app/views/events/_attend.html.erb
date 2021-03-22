@@ -1,10 +1,21 @@
-<%= form_with(model: @attendance) do |form| %>
-  <div class="field">
-    <%= form.hidden_field :event_id, value: @event.id %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit "Attend this Event"%>
-  </div>
+<% @attendances.each do |at| %>
+  <% if @user.id == at.user_id.to_i %>
+    <%= form_with(model: @attendance) do |form| %>
+      <div class="field">
+        <%= form.hidden_field :event_id, value: @event.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= form_with(model: @attendance) do |form| %>
+      <div class="field">
+        <%= form.hidden_field :event_id, value: @event.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Attend this Event"%>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
