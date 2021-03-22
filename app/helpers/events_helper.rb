@@ -9,7 +9,4 @@ module EventsHelper
     name.html_safe
   end
 
-  def show_attendance_button(event, attendance)
-    render 'attend', attendance: attendance if logged_in?
-  end
 end
