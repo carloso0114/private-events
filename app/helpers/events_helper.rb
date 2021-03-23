@@ -11,13 +11,14 @@ module EventsHelper
 
   def attenders
     name = ''
-      @attendances.each do |at|
-        if at.event_id == @event
-          name += render inline: "<p> #{use.username} </p>"
+    
+      
+        @event.attendees.each do |att|
+            name += render inline: "<p>#{att.username}</p>"
         end
-      end
-      name.html_safe
-    end
+
+    name.html_safe
+  end
 
 
 end
