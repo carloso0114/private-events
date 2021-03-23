@@ -1,20 +1,20 @@
 
 <h1><%= @user.username %></h1>
      
-
 <table>
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Events created</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    
       <%= u_list(@user, @events) %>
-    
   </tbody>
 </table>
+
+<h5>Attending to</h5>
+<%= attending %>
 
 <%= link_to 'New Event', new_event_path %>
