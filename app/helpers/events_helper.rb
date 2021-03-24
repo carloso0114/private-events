@@ -3,16 +3,16 @@ module EventsHelper
     name = ''
     @user.each do |use|
       if use.id == @event.creator_id.to_i
-        name += render inline: "<p> #{use.username} </p>"
+        name += render inline: "<%= link_to '#{use.username}', user_path('#{use.id}') %> <br>"
       end
     end
     name.html_safe
   end
 
   def attenders
-    name = ''    
+    name = ''
         @event.attendees.each do |att|
-            name += render inline: "<p>#{att.username}</p>"
+            name += render inline: "<%= link_to '#{att.username}', user_path('#{att.id}') %> <br>"
         end
     name.html_safe
   end
