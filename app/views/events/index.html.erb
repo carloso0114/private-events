@@ -15,13 +15,16 @@
       <tr>
         <td><%= event.description %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<h5>Upcoming events</h5>
+<%= attending_for_event %>
+
+<h5>Previously attended events</h5>
+<%= attending_past_event %>
 
 <%= link_to 'New Event', new_event_path %>
