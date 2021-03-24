@@ -11,33 +11,33 @@ module EventsHelper
 
   def attenders
     name = ''
-        @event.attendees.each do |att|
-            name += render inline: "<%= link_to '#{att.username}', user_path('#{att.id}') %> <br>"
-        end
+    @event.attendees.each do |att|
+      name += render inline: "<%= link_to '#{att.username}', user_path('#{att.id}') %> <br>"
+    end
     name.html_safe
   end
 
   def attending_for_event
     name = ''
-   
-        @events.each do |att|
-          if att.date > @time
-            name += render inline: "<p>#{att.description}</p>"
-            name += render inline: "<p>#{att.date}</p>"
-          end
+
+    @events.each do |att|
+      if att.date > @time
+        name += render inline: "<p>#{att.description}</p>"
+        name += render inline: "<p>#{att.date}</p>"
       end
+    end
     name.html_safe
   end
 
   def attending_past_event
     name = ''
-   
-        @events.each do |att|
-          if att.date < @time
-            name += render inline: "<p>#{att.description}</p>"
-            name += render inline: "<p>#{att.date}</p>"
-          end
+
+    @events.each do |att|
+      if att.date < @time
+        name += render inline: "<p>#{att.description}</p>"
+        name += render inline: "<p>#{att.date}</p>"
       end
+    end
     name.html_safe
   end
 end
