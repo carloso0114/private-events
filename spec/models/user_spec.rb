@@ -40,12 +40,49 @@ end
 #   end
 # end
 
-# RSpec.describe 'Open Browser test', type: :feature do
-#   scenario 'Sign up page' do   
-#       visit new_user_path
-#       fill_in "Username", :with => 'carlos'
-#       click_button "Sign Up"
-#       gets 'users_path'
-#       response.should be_success
-#   end
-# end
+RSpec.describe 'Sign in test', type: :feature do
+  before :each do
+    User.create(username: 'carlos')
+  end
+
+    it 'signs me in' do
+      visit login_path
+      within('.login-form') do
+      fill_in "Username", :with => 'carlos'
+    end
+      click_button "Log in"
+      expect(current_path).to eq("/users/1")
+    end 
+end
+
+RSpec.describe 'Sign up test', type: :feature do
+
+    it 'create new account' do
+      visit new_user_path
+      within('.sign-up-form') do
+      fill_in "Username", :with => 'carlos'
+    end
+      click_button "Sign Up"
+      expect(current_path).to eq("/users/1")
+    end 
+end
+
+RSpec.describe 'Create new event', type: :feature do
+  before :each do
+    User.create(username: 'carlos')
+  end
+
+    it 'signs in and create event' do
+      visit login_path
+      within('.login-form') do
+      fill_in "Username", :with => 'carlos'
+    end
+      click_button "Log in"
+      visit new_event_path
+      fill_in "Description", :with => 'Party'
+      click_button "commit"
+      expect(current_path).to eq("/events/1")
+    end
+end
+
+
