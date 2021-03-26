@@ -85,4 +85,24 @@ RSpec.describe 'Create new event', type: :feature do
     end
 end
 
+RSpec.describe 'Create new event', type: :feature do
+  before :each do
+    User.create(username: 'carlos')
+  end
+
+    it 'signs in and create event' do
+      visit login_path
+      within('.login-form') do
+      fill_in "Username", :with => 'carlos'
+    end
+      click_button "Log in"
+      visit new_event_path
+      fill_in "Description", :with => 'Party'
+      click_button "commit"
+      click_button "commit"
+      expect(Attendance.first.user_id).to eq(1)
+      expect(Attendance.first.event_id).to eq(1)
+    end
+end
+
 
