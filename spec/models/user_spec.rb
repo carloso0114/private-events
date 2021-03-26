@@ -46,6 +46,9 @@ RSpec.describe 'Create new attendance', type: :feature do
     click_button 'Log in'
     visit new_event_path
     fill_in 'Description', with: 'Party'
+    find("#event_date_1i option[value='2021']").select_option
+    find("#event_date_2i option[value='3']").select_option
+    find("#event_date_3i option[value='26']").select_option
     click_button 'commit'
     click_button 'commit'
     expect(Attendance.first.user_id).to eq(User.first.id)
