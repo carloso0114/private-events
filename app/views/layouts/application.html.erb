@@ -27,12 +27,12 @@
       </div>
     </div>
     <% if logged_in? %>
-        
-     <%= link_to "Log out", logout_path,method: :delete %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <% else %>
-        <%= link_to "Log in", login_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <%= link_to "Sign up", new_user_path %>
-      <% end %>
+      <%= link_to "Profile", "/users/#{current_user.id}" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to "Log out", logout_path,method: :delete %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <% else %>
+      <%= link_to "Log in", login_path %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to "Sign up", new_user_path %>
+    <% end %>
   </div>
 </nav>
 
