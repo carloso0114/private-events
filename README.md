@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Blog App
+# Private Events
 
 > In this project we build a web application that allow people to let other people know if they are attending or if they did attend to an event.
 
