@@ -1,0 +1,19 @@
+<% there = false %>
+<% @event.attendees.each do |att| %>
+  <% if current_user.id == att.id %>
+    <% there = true %>
+    <% break %>
+  <% end %>
+<% end %>
+
+<% if (there == false) %>
+  <%= form_with(model: @attendance) do |form| %>
+    <div class="field">
+      <%= form.hidden_field :event_id, value: @event.id %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Attend this Event"%>
+    </div>
+  <% end %>
+<% end %>

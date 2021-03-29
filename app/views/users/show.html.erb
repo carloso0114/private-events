@@ -1,0 +1,24 @@
+
+<h1><%= @user.username %></h1>
+     
+<table>
+  <thead>
+    <tr>
+      <th>Events created</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <%= u_list(@user, @events) %>
+  </tbody>
+</table>
+
+<h5>Upcoming events</h5>
+<%= attending %>
+
+<h5>Previously attended events</h5>
+<%= attending_past %>
+
+<%= link_to 'New Event', new_event_path %>
+<%= link_to 'Back', events_path %>
