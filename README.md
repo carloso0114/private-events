@@ -1,10 +1,14 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Private Events
+# Express yourself
 
 > In this project we build a web application that allow people to let other people know if they are attending or if they did attend to an event.
 
-You will be able to sign in, sign up at the index page, then you are able to create an event, only the users who sign in are able to see create an event and see it, if you opt to sign out, then you will be able to see the event but not to attend it.
+You will be able to sign in, sign up at the home page, then you are able to create opinions, only the users who sign in are able to see create an opinion and see it, if you opt to sign out, then you wont be able to see the opinions at all.
+You can upload your own profile pictures! (Take it easy i have limited free storage)
+You can upload your own cover picture to your profile page (same as above)
+You can follow another user and see their opinions directly in you home page.
+You can vote up for opinions you like, to highlight how users care about one thought.
 
 
 ## Built With
@@ -13,9 +17,6 @@ You will be able to sign in, sign up at the index page, then you are able to cre
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-- Linux/Mac Operating systems
 
 ### Setup
 1. Open your terminal or command prompt.
@@ -31,16 +32,11 @@ To get a local copy up and running follow these simple example steps.
 3. Then you can type <code>yarn install --check-files</code>.
 4. Now type <code>bin/rails db:migrate</code> to migrate the database.
 ### Usage
-1. Run <code>bin/rails server</code>
+1. Run <code>rails server</code>
 2. Open your browser on http://localhost:3000/
 2. Enjoy
 
-## Authors
-
-👤 **Paul Clue**
-
-- GitHub: [@PaulClue](https://github.com/Paul-Clue)
-- LinkedIn: [Paul Clue](https://www.linkedin.com/in/paul-clue/)
+## Author
 
 👤 **Carlos Ospina**
 
@@ -51,7 +47,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/carloso0114/private-events/issues).
+Feel free to check the [issues page](https://github.com/carloso0114/express-yourself-rails-capstone/issues).
 
 ## Show your support
 
@@ -59,9 +55,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- The Odin Project <br>
-https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/associations
+Based of the structure from: 
+[https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+
+Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 ## 📝 License
 
-This project is [MIT](https://github.com/carloso0114/private-events/blob/development/LICENSE) licensed.
+This project is [MIT](https://github.com/carloso0114/express-yourself-rails-capstone/blob/development/LICENSE) licensed.
